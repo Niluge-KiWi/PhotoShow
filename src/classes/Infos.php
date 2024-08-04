@@ -111,7 +111,7 @@ class Infos implements HTMLObject
 		echo "<div class='infos_title'>".htmlentities($this->title, ENT_QUOTES ,'UTF-8')."</div>";
 		if(!Settings::$nodownload){
 			/// Zip button
-			echo 	"<a href='$this->dl' class='floating-action'><i class='fa fa-arrow-down fa-large'></i></a>\n";
+			echo 	"<a href='$this->dl' class='floating-action' title='Download .zip'><i class='fa fa-arrow-down fa-large'></i></a>\n";
 		}
 		echo "</div>";
 
