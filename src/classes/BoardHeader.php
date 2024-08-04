@@ -60,7 +60,8 @@ class BoardHeader{
 	 */
 	public function __construct(){
 		$this->path 	=	urlencode(File::a2r(CurrentUser::$path));
-		$this->title 	=	is_dir(CurrentUser::$path)?end(explode('/', CurrentUser::$path)):end(explode('/', dirname(CurrentUser::$path)));
+    $path_segments = is_dir(CurrentUser::$path) ? explode('/', CurrentUser::$path) : explode('/', dirname(CurrentUser::$path));
+		$this->title 	=	end($path_segments);
 		$this->w 		= 	File::a2r(CurrentUser::$path);
 	}
 	
