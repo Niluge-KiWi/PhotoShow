@@ -46,7 +46,7 @@
 class Image implements HTMLObject
 {
 	/// URLencoded version of the relative path to file
-	static public $fileweb;
+	public $fileweb;
 	
 	/// URLencoded version of the relative path to directory containing file
 	private $dir;
@@ -68,7 +68,7 @@ class Image implements HTMLObject
 	 * @author Thibaud Rohmer
 	 */
 	public function __construct($file=NULL,$forcebig = false){
-		
+
 		/// Check file type
 		if(!isset($file) || !File::Type($file) || File::Type($file) != "Image")
 			return;
