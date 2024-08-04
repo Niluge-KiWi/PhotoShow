@@ -76,19 +76,16 @@ function CrossBrowserResizeInnerWindowTo(newWidth, newHeight) {
 <script type="text/javascript" src="javascript_api.js"></script>
 
 <?php
-function SafeStripSlashes($string) {
-	return (get_magic_quotes_gpc() ? stripslashes($string) : $string);
-}
 require_once('../phpThumb.config.php');
 
 $additionalparameters = array();
 foreach ($_GET as $key => $value) {
 	if (is_array($value)) {
 		foreach ($value as $key2 => $value2) {
-			$additionalparameters[] = $key.'[]='.SafeStripSlashes($value2);
+			$additionalparameters[] = $key.'[]='.$value2;
 		}
 	} else {
-		$additionalparameters[] = $key.'='.SafeStripSlashes($value);
+		$additionalparameters[] = $key.'='.$value;
 	}
 }
 //$imagesrc = $phpThumbLocation.implode('&', $additionalparameters);
